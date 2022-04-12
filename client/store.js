@@ -1,11 +1,11 @@
 import { createStore, applyMiddleware } from 'redux'
 import appReducer from './redux/index'
 import { createLogger } from 'redux-logger'
-import { thunkMiddleware } from 'redux-thunk'
+import thunkMiddleware from 'redux-thunk'
 import axios from 'axios'
 
 let middleware = [
-  // thunkMiddleware,
+  thunkMiddleware,
   createLogger()
 ]
 // if (process.browser) {
