@@ -1,23 +1,27 @@
 import { createStore, applyMiddleware } from 'redux'
-import axios from 'axios'
 import appReducer from './redux'
 import { createLogger } from 'redux-logger'
-import { ThunkMiddleware } from 'redux-thunk'
+import { thunkMiddleware } from 'redux-thunk'
 
 // let middleware = [
-//   ThunkMiddleware.withExtraArgument({axios}),
+//   thunkMiddleware.withExtraArgument({axios}),
 // ]
 // if (process.browser) {
 //   middleware = [...middleware, createLogger({collapsed: true})]
 // }
-// not sure if this is needed, found it on jpfp
+// // not sure if this is needed, found it on jpfp
+
+// const store = createStore(
+//   appReducer,
+//   composeWithDevTools(applyMiddleware(...middleware))
+// );
 
 const store = createStore(
   appReducer,
   applyMiddleware(
-    ThunkMiddleware,
+    thunkMiddleware,
     createLogger()
   )
-);
+)
 
 export default store

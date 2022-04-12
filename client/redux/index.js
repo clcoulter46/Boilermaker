@@ -5,7 +5,7 @@ function dummyReducer (state = {}, action) {
 }
 
 const appReducer = combineReducers({
-  dummyReducer //replace this with a real reducer once ready
+  dummyReducer: dummyReducer //replace this with a real reducer once ready
 })
 
 export default appReducer
