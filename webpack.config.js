@@ -11,11 +11,15 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules/,
+        use: [
+          "style-loader",
+          "css-loader"
+        ],
+        exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         options: {
           presets: [
-            '@babel/preset-react'
+            'react', 'es2015'
           ]
         }
       }
