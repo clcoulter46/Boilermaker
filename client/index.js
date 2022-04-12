@@ -8,7 +8,7 @@ import store from './store'
 
 render(
   <Provider store={store}>
-    {/* rest of app goes here */}
+    {/* <Routes/> */}
     <div>Hello, world!</div>
   </Provider>,
   document.getElementById('app') //to connect to index.html
